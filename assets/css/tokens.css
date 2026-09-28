@@ -1,0 +1,211 @@
+/*
+ * tokens.css — Tier 1 (Global) + Tier 2 (Sémantique)
+ * OKLCH strict. Aucune valeur hexadécimale.
+ * Chargé en premier dans le bundle CSS.
+ */
+
+/* ═══════════════════════════════════════════════════════════
+   TIER 1 — GLOBAL (référentiels bruts, usage interne seul)
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+
+  /* ── Ancre principale — terre cuite clay ─────────────────── */
+  --ref-anchor-50:  oklch(0.975 0.010 45);
+  --ref-anchor-100: oklch(0.940 0.028 45);
+  --ref-anchor-300: oklch(0.820 0.085 45);
+  --ref-anchor-500: oklch(0.680 0.140 45);
+  --ref-anchor-700: oklch(0.480 0.110 45);
+  --ref-anchor-900: oklch(0.260 0.030 45);
+
+  /* ── Accent secondaire — bleu doux ──────────────────────── */
+  --ref-accent-300: oklch(0.820 0.070 225);
+  --ref-accent-500: oklch(0.650 0.120 225);
+  --ref-accent-700: oklch(0.470 0.100 225);
+
+  /* ── Neutres (teintés ~5 % hue ancre) ───────────────────── */
+  --ref-neutral-0:   oklch(0.985 0.006 45);
+  --ref-neutral-50:  oklch(0.965 0.008 45);
+  --ref-neutral-100: oklch(0.930 0.010 45);
+  --ref-neutral-300: oklch(0.820 0.010 45);
+  --ref-neutral-500: oklch(0.600 0.014 45);
+  --ref-neutral-700: oklch(0.420 0.018 45);
+  --ref-neutral-900: oklch(0.240 0.020 45);
+
+  /* ── Statuts ─────────────────────────────────────────────── */
+  --ref-status-success: oklch(0.660 0.130 150);
+  --ref-status-error:   oklch(0.580 0.180  25);
+  --ref-status-warning: oklch(0.750 0.140  75);
+
+  /* ── Espacement ──────────────────────────────────────────── */
+  --ref-space-1:  0.25rem;
+  --ref-space-2:  0.5rem;
+  --ref-space-3:  0.75rem;
+  --ref-space-4:  1rem;
+  --ref-space-6:  1.5rem;
+  --ref-space-8:  2rem;
+  --ref-space-12: 3rem;
+  --ref-space-16: 4rem;
+  --ref-space-24: 6rem;
+
+  /* ── Rayons clay ─────────────────────────────────────────── */
+  --ref-radius-sm:   10px;
+  --ref-radius-md:   16px;
+  --ref-radius-lg:   24px;
+  --ref-radius-xl:   32px;
+  --ref-radius-pill: 999px;
+
+  /* ── Motion ──────────────────────────────────────────────── */
+  --ref-duration-micro:  150ms;
+  --ref-duration-fast:   200ms;
+  --ref-duration-page:   280ms;
+  --ref-ease-out:        cubic-bezier(0.23, 1, 0.32, 1);
+  --ref-ease-in-out:     cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ── Layering (z-index) ───────────────────────────────────── */
+  --z-base: 1;
+  --z-sticky: 50;        /* header sticky */
+  --z-overlay: 90;       /* scrim, éléments semi-modaux */
+  --z-modal: 100;        /* drawer, dialogs modaux */
+  --z-progress: 110;     /* reading progress bar */
+  --z-toast: 120;        /* notifications */
+
+  /* ── Typographie (échelle fluide) ────────────────────────── */
+  --ref-font-sans:    'Inter', system-ui, -apple-system, sans-serif;
+  --ref-font-display: 'Outfit', 'Inter', sans-serif;
+
+  /* Corps */
+  --ref-text-xs:   clamp(0.6875rem, 0.65rem + 0.19vw, 0.75rem);
+  --ref-text-sm:   clamp(0.8125rem, 0.77rem + 0.21vw, 0.875rem);
+  --ref-text-base: clamp(0.9375rem, 0.90rem + 0.19vw, 1rem);
+  --ref-text-md:   clamp(1.0625rem, 0.98rem + 0.41vw, 1.125rem);
+  --ref-text-lg:   clamp(1.125rem,  1.00rem + 0.63vw, 1.25rem);
+
+  /* Titres */
+  --ref-text-xl:   clamp(1.25rem,  1.10rem + 0.75vw, 1.5rem);
+  --ref-text-2xl:  clamp(1.5rem,   1.25rem + 1.25vw, 2rem);
+  --ref-text-3xl:  clamp(1.875rem, 1.50rem + 1.88vw, 2.625rem);
+  --ref-text-4xl:  clamp(2.25rem,  1.75rem + 2.50vw, 3.5rem);
+  --ref-text-5xl:  clamp(2.75rem,  2.00rem + 3.75vw, 4.75rem);
+
+  /* Interlignage */
+  --ref-leading-tight:  1.2;
+  --ref-leading-snug:   1.35;
+  --ref-leading-normal: 1.6;
+  --ref-leading-loose:  1.8;
+
+  /* Graisse */
+  --ref-weight-regular: 400;
+  --ref-weight-medium:  500;
+  --ref-weight-semibold: 600;
+  --ref-weight-bold:    700;
+
+  /* ── Élévations (ombres OKLCH) ───────────────────────────── */
+  --elevation-0: none;
+  --elevation-1:
+    0 1px 2px  oklch(0.24 0.02 45 / 0.04),
+    0 4px 10px oklch(0.24 0.02 45 / 0.05);
+  --elevation-2:
+    0 2px 4px   oklch(0.24 0.02 45 / 0.04),
+    0 12px 28px oklch(0.24 0.02 45 / 0.08);
+  --elevation-3:
+    0 4px 8px   oklch(0.24 0.02 45 / 0.06),
+    0 24px 48px oklch(0.24 0.02 45 / 0.12);
+
+  /* ── Layout ──────────────────────────────────────────────── */
+  --layout-max:          1280px;
+  --layout-prose:        65ch;
+  --layout-gutter:       clamp(var(--ref-space-4), 5vw, var(--ref-space-16));
+  --layout-section-gap: clamp(var(--ref-space-16), 10vw, var(--ref-space-24));
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TIER 2 — SÉMANTIQUE (aliases par intention, thème clair)
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  /* Couleurs ancre */
+  --color-anchor-primary:   var(--ref-anchor-500);
+  --color-anchor-hover:     var(--ref-anchor-700);
+  --color-anchor-soft:      var(--ref-anchor-100);
+  --color-accent-secondary: var(--ref-accent-500);
+  --color-accent-soft:      var(--ref-accent-300);
+
+  /* Fond */
+  --color-bg-page:    var(--ref-neutral-50);
+  --color-bg-surface: var(--ref-neutral-0);
+  --color-bg-muted:   var(--ref-neutral-100);
+
+  /* Texte */
+  --color-text-primary:   var(--ref-neutral-900);
+  --color-text-secondary: var(--ref-neutral-700);
+  --color-text-muted:     var(--ref-neutral-700);
+  --color-text-inverse:   var(--ref-neutral-0);
+  --color-text-anchor:    var(--ref-anchor-700);
+
+  /* Bordures */
+  --color-border-subtle: var(--ref-neutral-100);
+  --color-border-strong: var(--ref-neutral-300);
+
+  /* Statuts */
+  --color-status-success: var(--ref-status-success);
+  --color-status-error:   var(--ref-status-error);
+  --color-status-warning: var(--ref-status-warning);
+
+  /* Éléments de surface */
+  --color-header-bg: color-mix(
+    in oklch,
+    var(--color-bg-surface) 92%,
+    transparent 8%
+  );
+  --color-overlay-bg: color-mix(
+    in oklch,
+    var(--color-bg-page) 90%,
+    var(--color-anchor-primary) 10%
+  );
+}
+
+/* ── Thème sombre ─────────────────────────────────────────── */
+
+[data-theme="dark"] {
+  --color-bg-page:    oklch(0.220 0.012 45);
+  --color-bg-surface: oklch(0.265 0.014 45);
+  --color-bg-muted:   oklch(0.310 0.014 45);
+
+  --color-text-primary:   oklch(0.965 0.008 45);
+  --color-text-secondary: oklch(0.845 0.010 45);
+  --color-text-muted:     oklch(0.700 0.012 45);
+  --color-text-inverse:   oklch(0.220 0.012 45);
+  --color-text-anchor:    var(--ref-anchor-300);
+
+  --color-border-subtle: oklch(0.320 0.014 45);
+  --color-border-strong: oklch(0.420 0.014 45);
+
+  --color-anchor-soft: oklch(0.380 0.090 45);
+
+  --elevation-1:
+    0 1px 2px  oklch(0.05 0.01 45 / 0.20),
+    0 4px 10px oklch(0.05 0.01 45 / 0.24);
+  --elevation-2:
+    0 2px 4px   oklch(0.05 0.01 45 / 0.24),
+    0 12px 28px oklch(0.05 0.01 45 / 0.36);
+  --elevation-3:
+    0 4px 8px   oklch(0.05 0.01 45 / 0.32),
+    0 24px 48px oklch(0.05 0.01 45 / 0.48);
+
+  --color-header-bg: color-mix(
+    in oklch,
+    var(--color-bg-surface) 88%,
+    transparent 12%
+  );
+  --color-overlay-bg: color-mix(
+    in oklch,
+    var(--color-bg-page) 90%,
+    var(--color-anchor-primary) 10%
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TIER 3 — COMPOSANT (défini dans components.css)
+   TIER 4 — ÉTAT (défini au niveau composant via :is, :where)
+   ═══════════════════════════════════════════════════════════ */

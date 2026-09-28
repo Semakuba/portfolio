@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://semakuba.ct.ws/sitemap.xml

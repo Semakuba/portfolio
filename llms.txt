@@ -1,0 +1,16 @@
+# Semakuba David — Portfolio
+
+> Portfolio personnel de Semakuba David, développeur web
+> et applications basé en RDC. Conception de systèmes web,
+> applications mobiles et outils desktop.
+
+## Projets
+- TRAMO 2.0 : https://semakuba.ct.ws/projets/tramo-2-0
+- STIVO Bridge : https://semakuba.ct.ws/projets/stivo-bridge
+- Flux (DevMedia) : https://semakuba.ct.ws/projets/flux-devmedia
+- POS Print : https://semakuba.ct.ws/projets/pos-print
+
+## Contact
+- Email : semakubadavid931@gmail.com
+- GitHub : https://github.com/Semakuba
+- Portfolio : https://semakuba.ct.ws

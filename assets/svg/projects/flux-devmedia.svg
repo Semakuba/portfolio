@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" fill="none">
+  <defs>
+    <linearGradient id="bg-flux" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="oklch(0.925 0.035 225)" />
+      <stop offset="100%" stop-color="oklch(0.840 0.075 225)" />
+    </linearGradient>
+    <linearGradient id="clay-device" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="oklch(0.985 0.008 225)" />
+      <stop offset="100%" stop-color="oklch(0.940 0.020 225)" />
+    </linearGradient>
+    <linearGradient id="accent-play" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="oklch(0.650 0.120 225)" />
+      <stop offset="100%" stop-color="oklch(0.500 0.110 225)" />
+    </linearGradient>
+    <filter id="clay-shadow-flux" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="oklch(0.24 0.02 225 / 0.10)" />
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="oklch(0.24 0.02 225 / 0.05)" />
+    </filter>
+  </defs>
+
+  <!-- Fond -->
+  <rect width="800" height="500" fill="url(#bg-flux)" />
+
+  <!-- Ondes de flux média et téléchargement -->
+  <g opacity="0.30" stroke="oklch(0.650 0.120 225)" stroke-width="2.5" stroke-linecap="round">
+    <path d="M 100 250 C 180 180, 240 320, 320 250 C 400 180, 460 320, 540 250 C 620 180, 680 320, 760 250" />
+    <path d="M 120 300 C 200 240, 260 360, 340 300 C 420 240, 480 360, 560 300 C 640 240, 700 360, 740 320" stroke-dasharray="8 8" opacity="0.6" />
+  </g>
+
+  <!-- Lecteur média / Dispositif mobile Android en clay -->
+  <g filter="url(#clay-shadow-flux)">
+    <rect x="235" y="110" width="330" height="280" rx="24" fill="url(#clay-device)" stroke="oklch(1 0 0 / 0.5)" stroke-width="1.5" />
+
+    <!-- Écran vidéo stylisé -->
+    <rect x="260" y="135" width="280" height="150" rx="14" fill="oklch(0.880 0.040 225)" />
+    
+    <!-- Bouton Play clay central -->
+    <circle cx="400" cy="210" r="30" fill="url(#accent-play)" />
+    <polygon points="393,197 413,210 393,223" fill="oklch(0.99 0.005 225)" />
+
+    <!-- Barre de progression de téléchargement & reprise -->
+    <rect x="260" y="310" width="280" height="8" rx="4" fill="oklch(0.90 0.02 225)" />
+    <rect x="260" y="310" width="185" height="8" rx="4" fill="url(#accent-play)" />
+    <circle cx="445" cy="314" r="7" fill="oklch(0.99 0.005 225)" stroke="oklch(0.650 0.120 225)" stroke-width="2.5" />
+
+    <!-- Statut MediaStore / Tâches de fond -->
+    <rect x="260" y="338" width="120" height="12" rx="6" fill="oklch(0.35 0.03 225)" opacity="0.75" />
+    <rect x="470" y="338" width="70" height="12" rx="6" fill="oklch(0.650 0.120 225 / 0.18)" />
+    <circle cx="482" cy="344" r="3.5" fill="oklch(0.650 0.120 225)" />
+    <rect x="492" y="341" width="40" height="6" rx="3" fill="oklch(0.650 0.120 225)" />
+  </g>
+</svg>

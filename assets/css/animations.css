@@ -1,0 +1,293 @@
+/*
+ * animations.css — Phase 1 : Transitions, keyframes & gestion prefers-reduced-motion
+ * Dépend de tokens.css.
+ */
+
+/* ═══════════════════════════════════════════════════════════
+   1. GESTION GLOBALE PREFERS-REDUCED-MOTION (Phase 1 Header)
+   ═══════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  /* Header figé en mode compact net sans transition */
+  .site-header {
+    transition: none !important;
+    padding-block: var(--ref-space-3) !important;
+    background-color: color-mix(in oklab, var(--color-bg-page) 82%, transparent) !important;
+    backdrop-filter: saturate(140%) blur(14px) !important;
+    -webkit-backdrop-filter: saturate(140%) blur(14px) !important;
+    border-bottom-color: var(--color-border-subtle) !important;
+  }
+
+  /* Aucune rotation ni scale sur le logo */
+  .site-logo {
+    transition: none !important;
+  }
+
+  .site-logo:hover {
+    transform: none !important;
+  }
+
+  /* Aucune animation d'underline SVG */
+  .nav-desktop__underline line {
+    transition: none !important;
+  }
+
+  /* L'indicateur de section saute instantanément sans glisser */
+  .nav-desktop__indicator {
+    transition: none !important;
+  }
+
+  /* Aucun morphing sur le bouton de thème */
+  .theme-icon,
+  .theme-icon__mask-cut,
+  .theme-icon__sun-body,
+  .theme-icon__rays {
+    transition: none !important;
+  }
+
+  /* Le hamburger bascule sans transition géométrique */
+  .hamburger-bar {
+    transition: none !important;
+  }
+
+  /* Le tiroir mobile et scrim s'ouvrent instantanément sans animation ni stagger */
+  .drawer,
+  .drawer-scrim,
+  .drawer__item,
+  .drawer__action-btn {
+    transition: none !important;
+  }
+
+  .drawer.is-open,
+  .drawer.is-open .drawer__item,
+  .drawer.is-open .drawer__action-btn {
+    transform: none !important;
+  }
+
+  /* La bottom tab bar ne se masque pas au scroll */
+  .bottom-tab-bar {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .bottom-tab-bar--hidden {
+    transform: none !important;
+  }
+
+  .bottom-tab-bar__icon {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .reading-progress {
+    transition: none !important;
+  }
+
+  /* ── Hero section : neutralisation reduced motion ────────── */
+  .hero__mesh-spot {
+    animation: none !important;
+  }
+
+  .hero__eyebrow,
+  .hero__char,
+  .hero__subtitle,
+  .hero__btn {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .hero__scroll {
+    animation: none !important;
+    opacity: 0.5 !important;
+  }
+
+  .custom-cursor {
+    display: none !important;
+  }
+
+  /* ── Section Projets : neutralisation reduced motion ────── */
+  .project-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .project-card__link {
+    transition: none !important;
+  }
+
+  .project-card__link:hover {
+    transform: none !important;
+  }
+
+  .project-card__media,
+  .project-card__image,
+  .project-card__arrow,
+  .project-card__overlay {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* ── Page Détail & Lien Archive : neutralisation reduced motion ── */
+  .projects__all-link-underline line {
+    transition: none !important;
+  }
+
+  .project-detail__title,
+  .project-detail__section,
+  .project-detail__placeholder-media,
+  .project-detail__video-placeholder,
+  .project-detail__pagination-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .project-detail__pagination-arrow,
+  .project-detail__back-arrow {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* ── Section Compétences : neutralisation reduced motion ── */
+  .skills__header,
+  .skills__header .section-label,
+  .skills__header .section-title,
+  .skills__header .section-description,
+  .skill-zone,
+  .skill-zone__top,
+  .skill-zone__icon-wrap,
+  .skill-zone__icon,
+  .skill-zone__count,
+  .skill-zone__title,
+  .skill-zone__list,
+  .skill-zone__item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .skill-zone:hover,
+  .skill-zone:hover .skill-zone__count,
+  .skill-zone:hover .skill-zone__icon-wrap,
+  .skill-zone:hover .skill-zone__title {
+    transform: none !important;
+    font-weight: 600 !important;
+  }
+
+  .skill-zone__item::before,
+  .skill-zone__item::after {
+    transition: none !important;
+  }
+
+  .skill-zone__item:is(:hover, :focus-visible) {
+    transform: none !important;
+  }
+
+  .skill-zone__icon :is(path, polyline, line, rect, circle, ellipse) {
+    stroke-dashoffset: 0 !important;
+    stroke-dasharray: none !important;
+    transition: none !important;
+  }
+
+  /* ── Section À propos : neutralisation reduced motion (Phase 5) ── */
+  .about__name,
+  .about__role,
+  .about__portrait-wrap,
+  .about__portrait-bg,
+  .about__portrait-img,
+  .about__intro,
+  .about__block,
+  .about__project-list li {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: inset(0 0 0 0) !important;
+    transition: none !important;
+  }
+
+  .about__portrait-wrap:hover .about__portrait-img {
+    transform: none !important;
+  }
+
+  /* ── Contact ── */
+  .contact-card,
+  .contact-card__glow,
+  .contact-card__icon,
+  .contact-card__arrow,
+  .contact-card__copy,
+  .contact__grid,
+  .contact__item,
+  .contact__icon,
+  .contact__copy,
+  .contact__external,
+  .contact__action,
+  .contact__list {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .copy-toast {
+    transition: none !important;
+  }
+
+  /* ── Footer ── */
+  .site-footer__back,
+  .site-footer__back svg {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   2. KEYFRAMES HERO (Phase 2)
+   ═══════════════════════════════════════════════════════════ */
+
+/* Rebond doux du chevron de scroll */
+@keyframes chevron-bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(6px);
+  }
+}
+
+/* Mouvement lent du gradient mesh (amplitude ≤ 15 %, GPU composited) */
+@keyframes mesh-float-1 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(10%, 8%, 0) scale(1.08);
+  }
+  100% {
+    transform: translate3d(-8%, 12%, 0) scale(0.96);
+  }
+}
+
+@keyframes mesh-float-2 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-12%, -8%, 0) scale(1.1);
+  }
+  100% {
+    transform: translate3d(8%, 10%, 0) scale(0.94);
+  }
+}
+
+@keyframes mesh-float-3 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(11%, -10%, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(-10%, 6%, 0) scale(1.09);
+  }
+}

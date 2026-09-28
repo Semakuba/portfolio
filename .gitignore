@@ -1,0 +1,64 @@
+# === Dépendances ===
+node_modules/
+vendor/
+composer.lock
+
+# === Configuration locale ===
+.env
+.env.local
+.env.*.local
+config.local.php
+
+# === Fichiers système ===
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# === IDE et éditeurs ===
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# === Logs ===
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# === Sauvegardes ===
+*.bak
+*.old
+*.backup
+*.orig
+*~
+
+# === Fichiers temporaires ===
+*.tmp
+*.temp
+.tmp/
+
+# === Déploiement local ===
+.ftpconfig
+.sftp-config.json
+
+# === Documentation personnelle ===
+prompt ultra.md
+*.personal.md
+notes/
+
+# === Captures d'écran de développement ===
+screenshots-dev/
+test_seo.php
+check_fonts.php
+find_latin.php
+show_end.php

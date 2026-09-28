@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" fill="none">
+  <defs>
+    <linearGradient id="bg-tramo" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="oklch(0.920 0.035 45)" />
+      <stop offset="100%" stop-color="oklch(0.840 0.075 45)" />
+    </linearGradient>
+    <linearGradient id="card-clay" x1="180" y1="120" x2="620" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="oklch(0.985 0.010 45)" />
+      <stop offset="100%" stop-color="oklch(0.940 0.025 45)" />
+    </linearGradient>
+    <linearGradient id="badge-clay" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="oklch(0.680 0.140 45)" />
+      <stop offset="100%" stop-color="oklch(0.550 0.120 45)" />
+    </linearGradient>
+    <filter id="clay-shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="oklch(0.24 0.02 45 / 0.10)" />
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="oklch(0.24 0.02 45 / 0.05)" />
+    </filter>
+  </defs>
+
+  <!-- Fond subtil -->
+  <rect width="800" height="500" fill="url(#bg-tramo)" />
+
+  <!-- Réseau de transport stylisé en filigrane -->
+  <g opacity="0.35" stroke="oklch(0.680 0.140 45)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 80 420 C 220 400, 260 260, 400 240 C 540 220, 600 120, 720 100" />
+    <path d="M 120 80 C 240 140, 360 380, 520 340 C 640 300, 700 380, 760 420" stroke-dasharray="8 8" />
+    <circle cx="280" cy="250" r="7" fill="oklch(0.98 0.01 45)" stroke-width="3" />
+    <circle cx="400" cy="240" r="9" fill="oklch(0.680 0.140 45)" stroke-width="3" />
+    <circle cx="520" cy="340" r="7" fill="oklch(0.98 0.01 45)" stroke-width="3" />
+  </g>
+
+  <!-- Carte PVC centrale en claymation -->
+  <g filter="url(#clay-shadow)">
+    <rect x="230" y="130" width="340" height="215" rx="18" fill="url(#card-clay)" stroke="oklch(1 0 0 / 0.4)" stroke-width="1.5" />
+    
+    <!-- Puce carte / En-tête -->
+    <rect x="265" y="165" width="44" height="34" rx="6" fill="oklch(0.85 0.06 75)" opacity="0.8" />
+    <circle cx="510" cy="180" r="18" fill="url(#badge-clay)" />
+    
+    <!-- Lignes de données simulées -->
+    <rect x="265" y="225" width="160" height="10" rx="5" fill="oklch(0.35 0.02 45)" opacity="0.75" />
+    <rect x="265" y="247" width="220" height="8" rx="4" fill="oklch(0.55 0.02 45)" opacity="0.5" />
+    <rect x="265" y="265" width="130" height="8" rx="4" fill="oklch(0.55 0.02 45)" opacity="0.5" />
+    
+    <!-- Badge statut d'authentification -->
+    <rect x="265" y="300" width="85" height="20" rx="10" fill="oklch(0.680 0.140 45 / 0.15)" />
+    <rect x="275" y="306" width="65" height="8" rx="4" fill="oklch(0.680 0.140 45)" />
+  </g>
+</svg>
